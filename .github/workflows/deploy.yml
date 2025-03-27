@@ -19,7 +19,7 @@ jobs:
           npm run build  # This should output files to 'dist' or 'build' folder
 
       - name: Deploy to S3
-        uses: aws-actions/s3-sync-action@v1
+        uses: aws-actions/s3-sync-action@main
         with:
           bucket: zhaojunan.com
           region: us-east-1  # Change to your bucket’s region
