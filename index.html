@@ -10,160 +10,24 @@
 </head>
 
 <body>
-    <h1> Hello </h1>
-    <p>Welcome to my homepage!!</p>
+    <div class="intro-container">
+        <div class="intro-text">
+            <h1>Hello</h1>
+            <p>Welcome to my homepage!!</p>
+            <p>I am Junan Zhao, a developer passionate about coding and problem-solving.</p>
+        </div>
+        <img src="images/my_self.jpg" alt="My Picture" width="300">
+    </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am Junan Zhao, a developer passionate about coding and problem-solving.</p>
-    </section>
-
-    <img src="images/my_self.jpg" alt="My Picture" width="300">
-
-    <section id="favorites">
-        <h2>My Favorites</h2>
-
-        <div class="favorites-container">
-            <div class="favorite-item">
-                <h3>Book: <span class="favorite-name">Harry Potter</span></h3>
-                <div class="favorite-image">
-                    <a href="https://www.harrypotter.com" target="_blank">
-                        <img src="images/harry-potter.jpg" alt="Book Cover">
-                    </a>
-                </div>
-            </div>
-            <div class="favorite-item">
-                <h3>Movie: <span class="favorite-name">A Chinese Odyssey</span></h3>
-                <div class="favorite-image">
-                    <a href="https://en.wikipedia.org/wiki/A_Chinese_Odyssey" target="_blank">
-                        <img src="images/a-chinese-odyssey.jpeg" alt="Movie Poster">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Game: <span class="favorite-name">Metal Max</span></h3>
-                <div class="favorite-image">
-                    <a href="https://en.wikipedia.org/wiki/Metal_Max" target="_blank">
-                        <img src="images/metal-max.webp" alt="Metal Max">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Anime: <span class="favorite-name">Dragon Ball</span></h3>
-                <div class="favorite-image">
-                    <a href="https://en.dragon-ball-official.com" target="_blank">
-                        <img src="images/dragon-ball.jpg" alt="Dragon Ball">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Anime Character: <span class="favorite-name">Ai Haibara</span></h3>
-                <div class="favorite-image">
-                    <a href="https://www.detectiveconanworld.com/wiki/Ai_Haibara#google_vignette" target="_blank">
-                        <img src="images/ai-haibara.webp" alt="Ai Haibara">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Singer: <span class="favorite-name">Jay Chou</span></h3>
-                <div class="favorite-image">
-                    <a href="https://www.instagram.com/jaychou/" target="_blank">
-                        <img src="images/jay-chou.jpg" alt="Jay Chou">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Athlete: <span class="favorite-name">Kobe Bryant</span></h3>
-                <div class="favorite-image">
-                    <a href="https://x.com/kobebryant" target="_blank">
-                        <img src="images/kobe-bryant.jpg" alt="Kobe Bryant">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Actor: <span class="favorite-name">Bruce Lee</span></h3>
-                <div class="favorite-image">
-                    <a href="https://brucelee.com" target="_blank">
-                        <img src="images/bruce-lee.webp" alt="Bruce Lee">
-                    </a>
-                </div>
-            </div>
-
-            <div class="favorite-item">
-                <h3>Writer: <span class="favorite-name">Tiesheng Shi</span></h3>
-                <div class="favorite-image">
-                    <a href="https://en.wikipedia.org/wiki/Shi_Tiesheng" target="_blank">
-                        <img src="images/tiesheng-shi.jpg" alt="Tiesheng Shi">
-                    </a>
-                </div>
-            </div>
+    <section id="main-hub">
+        <div class="hub-container">
+            <a href="career.html" class="hub-item">My Career</a>
+            <a href="life.html" class="hub-item">My Life</a>
+            <a href="message.html" class="hub-item">Leave Me a Message</a>
+            <a href="games.html" class="hub-item">Small Games</a>
         </div>
     </section>
-
-    <section id="links">
-        <h2>Links & References</h2>
-        <p>Here are some links for my reference:</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/junan-zhao/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/junanz225" target="_blank">GitHub</a></li>
-            <li><a href="https://leetcode.com/u/junanz/" target="_blank">LeetCode</a></li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Leave a Message</h2>
-        <form id="messageForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="senderName" required><br><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="message">Message:</label><br>
-            <textarea id="message" rows="5" name="content" required></textarea><br><br>
-
-            <button type="submit">Send</button>
-        </form>
-        <p id="statusMessage"></p>
-    </section>
-
-    <script>
-        document.getElementById("messageForm").addEventListener("submit", async function(event) {
-            event.preventDefault(); // Prevent page refresh
-
-            const senderName = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const content = document.getElementById("message").value;
-
-            const messageData = { senderName, email, content };
-
-            try {
-                const response = await fetch("https://api.zhaojunan.com/api/messages", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(messageData),
-                });
-
-                if (response.ok) {
-                    document.getElementById("statusMessage").innerText = "Message sent successfully!";
-                    document.getElementById("messageForm").reset(); // Clear the form
-                } else {
-                    document.getElementById("statusMessage").innerText = "Failed to send message.";
-                }
-            } catch (error) {
-                document.getElementById("statusMessage").innerText = "Error: " + error.message;
-            }
-        });
-    </script>
-
 </body>
 
 </html>
+
