@@ -9,15 +9,42 @@
 <body>
     <h1>My Life</h1>
     <ul>
-        <li><a href="#">🖼 My Gallery (coming soon)</a></li>
+        <li><a href="#gallery">🖼 My Gallery</a></li>
         <li><a href="#favorites">🌟 My Favorites</a></li>
+        <li><a href="#hobbies">🎹 My Hobbies</a></li>
         <li><a href="#">🌍 My Life Journey on Earth (coming soon)</a></li>
     </ul>
 
+    <section id="gallery">
+        <h2 style="text-align: left; margin-top: 40px;">My Gallery</h2>
+        <div class="photo-gallery">
+            <img id="lifePhoto" src="images/gallery1.jpg" alt="Gallery Photo">
+        </div>
+
+        <script>
+            const images = [
+              'images/gallery1.jpg',
+              'images/gallery2.jpg',
+              'images/gallery3.jpg',
+              'images/gallery4.jpg',
+              'images/gallery5.jpg',
+              'images/my_self.jpg'
+            ];
+
+            let current = 0;
+            const imgEl = document.getElementById('lifePhoto');
+
+            imgEl.addEventListener('click', () => {
+              current = (current + 1) % images.length;
+              imgEl.src = images[current];
+            });
+        </script>
+    </section>
+
     <section id="favorites">
         <h2>My Favorites</h2>
-
         <div class="favorites-container">
+
             <div class="favorite-item">
                 <h3>Book: <span class="favorite-name">Harry Potter</span></h3>
                 <div class="favorite-image">
@@ -26,6 +53,7 @@
                     </a>
                 </div>
             </div>
+
             <div class="favorite-item">
                 <h3>Movie: <span class="favorite-name">A Chinese Odyssey</span></h3>
                 <div class="favorite-image">
@@ -58,6 +86,15 @@
                 <div class="favorite-image">
                     <a href="https://www.detectiveconanworld.com/wiki/Ai_Haibara#google_vignette" target="_blank">
                         <img src="images/ai-haibara.webp" alt="Ai Haibara">
+                    </a>
+                </div>
+            </div>
+
+            <div class="favorite-item">
+                <h3>Piano Piece: <span class="favorite-name">Crying for Rain</span></h3>
+                <div class="favorite-image">
+                    <a href="https://shorturl.at/JoHMz" target="_blank">
+                        <img src="images/crying-for-rain.png" alt="Crying for Rain">
                     </a>
                 </div>
             </div>
@@ -97,6 +134,22 @@
                     </a>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>🎹 My Hobbies</h2>
+        <p>Here's one of my piano performances. I hope you enjoy it!</p>
+        <div class="video-container">
+            <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=114322701292794&bvid=BV1dHddYhEdV&cid=29365961822&p=1"
+                    scrolling="no"
+                    border="0"
+                    frameborder="no"
+                    framespacing="0"
+                    allowfullscreen="true">
+            </iframe>
         </div>
     </section>
 

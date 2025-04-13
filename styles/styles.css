@@ -111,3 +111,63 @@
 .back-link:hover {
     text-decoration: underline;
 }
+
+.social-links {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.leetcode-icon {
+  transform: scale(0.75); /* Adjust this until it looks balanced */
+}
+
+.leetcode-icon:hover {
+    transform: scale(1.0);
+}
+
+.powered-by-container {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.repo-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin-right: 4px;
+}
+
+.photo-gallery {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.02);
+}
